@@ -1,0 +1,43 @@
+[user]
+	email = ab0988956087@gmail.com
+	name = Leo Wang
+[push]
+	autoSetupRemote = true
+	default = current
+	followTags = true
+[core]
+	excludesfile = /home/leo/.gitignore_global
+	autocrlf = false
+
+[alias]
+	logg = log --graph --oneline --decorate
+	# update main branch then remove last branch
+	mp = "!git checkout main && git pull --rebase && git branch -D @{-1}"
+	pu = push -u
+	put ="!git push -u && git push -u --tags"
+	amend = commit --amend
+	ane = commit --amend --no-edit
+	c=commit
+	cam="!git add . && git commit -m"
+	cm= commit -m
+	cp= cherry-pick
+	ssm= stash save -m
+	sp= stash pop
+	td= tag -d
+	pod= push origin -d
+	sl= stash list
+	s= stash
+	res=restore .
+	sd=stash drop
+	aa="!git add . && git amend"
+	aan="!git add . && git commit --amend --no-edit"
+	st=status
+	co=checkout
+	nah = "!f(){ git reset --hard; git clean -df; if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then git rebase --abort; fi; }; f"
+	re=remote
+	back=reset HEAD^ --hard
+	rv = remote -v
+	# diff last
+	dl = diff HEAD^ HEAD
+[init]
+	defaultBranch = main
